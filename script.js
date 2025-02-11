@@ -125,9 +125,9 @@ sanma.addEventListener("click", () =>
     p4.display();
 });
 
-const center = document.getElementById("center");
+const fulsc = document.getElementById("fullscreen");
 
-document.body.addEventListener("click", () => 
+fulsc.addEventListener("click", () => 
 {
     if(document.fullscreenElement)
     {
