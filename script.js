@@ -74,6 +74,16 @@ class Player
             this.points += value;
             this.display();
         });
+
+        this.score.addEventListener("click", () => 
+        {
+            const value = prompt("Input new score:");
+            if(parseInt(value) != NaN)
+            {
+                this.points = parseInt(value);
+                this.display();
+            }
+        });
     }
 
     display()

@@ -64,7 +64,6 @@ main
     color: rgb(0, 0, 0);
     font-family: monospace;
     position: relative;
-    cursor: pointer;
 }
 
 .center > span
