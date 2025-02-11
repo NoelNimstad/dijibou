@@ -109,3 +109,18 @@ reset.addEventListener("click", () =>
     p3 = new Player(3, 25000);
     p4 = new Player(4, 25000);
 });
+
+const sanma = document.getElementById("sanma");
+
+sanma.addEventListener("click", () => 
+{
+    p1.points = 35000;
+    p2.points = 35000;
+    p3.points = 0;
+    p4.points = 35000;
+
+    p1.display();
+    p2.display();
+    p3.display();
+    p4.display();
+});

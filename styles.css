@@ -195,3 +195,14 @@ input
     border: none;
     cursor: pointer;
 }
+
+.sanma
+{
+    background: none;
+    color: white;
+    position: absolute;
+    top: 1rem;
+    font-size: 1.25rem;
+    border: none;
+    cursor: pointer;
+}
