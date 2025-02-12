@@ -1,3 +1,7 @@
+const drag = document.getElementById("drag");
+const hidden = document.getElementById("hidden");
+let dragging = false;
+
 class Player
 {
     constructor(id, points)
@@ -29,6 +33,9 @@ class Player
     {   
         this.ssticks100.addEventListener("dragstart", e => 
         {
+            e.dataTransfer.setDragImage(hidden, 0, 0);
+            dragging = true;
+            drag.src = "100.svg";
             e.dataTransfer.setData("value", "100");
             this.points -= 100;
             this.display();
@@ -36,6 +43,9 @@ class Player
 
         this.ssticks500.addEventListener("dragstart", e => 
         {
+            e.dataTransfer.setDragImage(hidden, 0, 0);
+            dragging = true;
+            drag.src = "500.svg";
             e.dataTransfer.setData("value", "500");
             this.points -= 500;
             this.display();
@@ -43,6 +53,9 @@ class Player
 
         this.ssticks1000.addEventListener("dragstart", e => 
         {
+            e.dataTransfer.setDragImage(hidden, 0, 0);
+            dragging = true;
+            drag.src = "1000.svg";
             e.dataTransfer.setData("value", "1000");
             this.points -= 1000;
             this.display();
@@ -50,6 +63,9 @@ class Player
 
         this.ssticks5000.addEventListener("dragstart", e => 
         {
+            e.dataTransfer.setDragImage(hidden, 0, 0);
+            dragging = true;
+            drag.src = "5000.svg";
             e.dataTransfer.setData("value", "5000");
             this.points -= 5000;
             this.display();
@@ -57,6 +73,9 @@ class Player
 
         this.ssticks10000.addEventListener("dragstart", e => 
         {
+            e.dataTransfer.setDragImage(hidden, 0, 0);
+            dragging = true;
+            drag.src = "10000.svg";
             e.dataTransfer.setData("value", "10000");
             this.points -= 10000;
             this.display();
@@ -64,11 +83,14 @@ class Player
 
         this.sticks.addEventListener("dragover", e => 
         {
+            dragging = true;
             e.preventDefault();
         });
 
         this.sticks.addEventListener("drop", e => 
         {
+            dragging = false;
+            drag.src = "";
             e.preventDefault();
             const value = parseInt(e.dataTransfer.getData("value"));
             this.points += value;
@@ -114,10 +136,33 @@ const reset = document.getElementById("reset");
 let p1, p2, p3, p4;
 reset.addEventListener("click", () => 
 {
-    p1 = new Player(1, 25000);
-    p2 = new Player(2, 25000);
-    p3 = new Player(3, 25000);
-    p4 = new Player(4, 25000);
+    if(p1 == undefined)
+    {
+        p1 = new Player(1, 25000);
+        p2 = new Player(2, 25000);
+        p3 = new Player(3, 25000);
+        p4 = new Player(4, 25000);
+    } else 
+    {
+        p1.points = 25000;
+        p2.points = 25000;
+        p3.points = 25000;
+        p4.points = 25000;
+
+        p1.display();
+        p2.display();
+        p3.display();
+        p4.display();
+    }
+});
+
+window.addEventListener("dragover", e =>
+{
+    if(dragging)
+    {
+        drag.style.left = `${ e.x }px`;
+        drag.style.top = `${ e.y }px`;
+    }
 });
 
 const sanma = document.getElementById("sanma");

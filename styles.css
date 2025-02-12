@@ -138,6 +138,36 @@ input
     position: absolute;
 }
 
+.sticks > div:hover > img
+{
+    scale: 1.1;
+}
+
+.sticks > div:nth-child(1):hover > img
+{
+    transform: rotate(7deg);
+}
+
+.sticks > div:nth-child(2):hover > img
+{
+    transform: rotate(-5deg);
+}
+
+.sticks > div:nth-child(3):hover > img
+{
+    transform: rotate(8deg);
+}
+
+.sticks > div:nth-child(4):hover > img
+{
+    transform: rotate(3deg);
+}
+
+.sticks > div:nth-child(5):hover > img
+{
+    transform: rotate(-2deg);
+}
+
 .sticks > div 
 {
     position: relative;
@@ -147,6 +177,8 @@ input
 {
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.25);
     cursor: grab;
+    transition: 0.2s;
+    z-index: 100;
 }
 
 .sticks > div > span
@@ -217,4 +249,11 @@ input
     font-size: 1.25rem;
     border: none;
     cursor: pointer;
+}
+
+.drag 
+{
+    position: absolute;
+    pointer-events: none;
+    transform: translateX(-50%) translateY(-50%);
 }
