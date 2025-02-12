@@ -258,8 +258,28 @@ input
 
 .drag 
 {
+    box-shadow: 0 0 10px 0 #00000090;
     position: absolute;
     pointer-events: none;
     scale: 1.35;
     transform: translateX(-45%) translateY(-40%);
+    animation: blink 1s ease infinite;
+}
+
+@keyframes blink
+{
+    0%
+    {
+        opacity: 0.8;
+    }    
+
+    50%
+    {
+        opacity: 1;
+    }
+
+    100%
+    {
+        opacity: 0.8;
+    }
 }
