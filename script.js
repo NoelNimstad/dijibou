@@ -33,6 +33,8 @@ class Player
     {   
         this.ssticks100.addEventListener("dragstart", e => 
         {
+            drag.style.left = `${ e.x }px`;
+            drag.style.top = `${ e.y }px`;
             e.dataTransfer.setDragImage(hidden, 0, 0);
             dragging = true;
             drag.src = "100.svg";
@@ -43,6 +45,8 @@ class Player
 
         this.ssticks500.addEventListener("dragstart", e => 
         {
+            drag.style.left = `${ e.x }px`;
+            drag.style.top = `${ e.y }px`;
             e.dataTransfer.setDragImage(hidden, 0, 0);
             dragging = true;
             drag.src = "500.svg";
@@ -53,6 +57,8 @@ class Player
 
         this.ssticks1000.addEventListener("dragstart", e => 
         {
+            drag.style.left = `${ e.x }px`;
+            drag.style.top = `${ e.y }px`;
             e.dataTransfer.setDragImage(hidden, 0, 0);
             dragging = true;
             drag.src = "1000.svg";
@@ -63,6 +69,8 @@ class Player
 
         this.ssticks5000.addEventListener("dragstart", e => 
         {
+            drag.style.left = `${ e.x }px`;
+            drag.style.top = `${ e.y }px`;
             e.dataTransfer.setDragImage(hidden, 0, 0);
             dragging = true;
             drag.src = "5000.svg";
@@ -73,6 +81,8 @@ class Player
 
         this.ssticks10000.addEventListener("dragstart", e => 
         {
+            drag.style.left = `${ e.x }px`;
+            drag.style.top = `${ e.y }px`;
             e.dataTransfer.setDragImage(hidden, 0, 0);
             dragging = true;
             drag.src = "10000.svg";
